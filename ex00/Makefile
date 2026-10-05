@@ -1,4 +1,4 @@
-NAME := Canonical_Form
+NAME := fixed
 
 CC := c++
 CFLAGS := -Wall -Wextra -Werror -std=c++98
@@ -14,13 +14,13 @@ OBJECTS := $(SOURCES:.cpp=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJ) -o $@
+	$(CC) $(CFLAGS) $(OBJECTS) -o $@
 
-$(OBJ_DIR)%.o : $(SRC_DIR)%.cpp
+%.o : %.cpp
 	$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $@
 
 clean :
-	rm -rf $(OBJECT)
+	rm -rf $(OBJECTS)
 
 fclean : clean
 	rm -rf $(NAME)
