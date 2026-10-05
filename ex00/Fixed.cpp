@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 12:46:35 by julauren          #+#    #+#             */
-/*   Updated: 2026/10/05 13:24:46 by julauren         ###   ########.fr       */
+/*   Updated: 2026/10/05 14:14:29 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Fixed::Fixed(void) : _rawValue(0)
 Fixed::Fixed(Fixed const &cpy)
 {
 	*this = cpy;
+	return;
 }
 
 Fixed::~Fixed(void)
@@ -32,7 +33,7 @@ Fixed &Fixed::operator=(Fixed const &rhs)
 	if (this != &rhs)
 		_rawValue = rhs._rawValue;
 
-	return *this;
+	return (*this);
 }
 
 int Fixed::getRawBits(void) const
@@ -43,4 +44,5 @@ int Fixed::getRawBits(void) const
 void Fixed::setRawBits(int const raw)
 {
 	_rawValue = raw;
+	return;
 }
