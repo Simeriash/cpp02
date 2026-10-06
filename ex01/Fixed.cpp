@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 14:06:11 by julauren          #+#    #+#             */
-/*   Updated: 2026/10/06 10:10:13 by julauren         ###   ########.fr       */
+/*   Updated: 2026/10/06 11:52:57 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <cmath>
 #include <ostream>
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : _rawValue(0)
 {
 	return;
 }
