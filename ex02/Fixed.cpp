@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/06 10:44:27 by julauren          #+#    #+#             */
-/*   Updated: 2026/10/06 12:30:11 by julauren         ###   ########.fr       */
+/*   Updated: 2026/10/06 13:15:03 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,22 +104,50 @@ bool Fixed::operator!=(Fixed const &rhs) const
 
 Fixed Fixed::operator+(Fixed const &rhs) const
 {
-	return (toFloat() + rhs.toFloat());
+	return (Fixed(toFloat() + rhs.toFloat()));
 }
 
 Fixed Fixed::operator-(Fixed const &rhs) const
 {
-	return (toFloat() - rhs.toFloat());
+	return (Fixed(toFloat() - rhs.toFloat()));
 }
 
 Fixed Fixed::operator*(Fixed const &rhs) const
 {
-	return (toFloat() * rhs.toFloat());
+	return (Fixed(toFloat() * rhs.toFloat()));
 }
 
 Fixed Fixed::operator/(Fixed const &rhs) const
 {
-	return (toFloat() / rhs.toFloat());
+	return (Fixed(toFloat() / rhs.toFloat()));
+}
+
+/*----------increment/decrement----------*/
+
+Fixed &Fixed::operator++()
+{
+	_rawValue++;
+	return (*this);
+}
+
+Fixed &Fixed::operator--()
+{
+	_rawValue--;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed temp(*this);
+	_rawValue++;
+	return (temp);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp(*this);
+	_rawValue--;
+	return (temp);
 }
 
 std::ostream &operator<<(std::ostream &o, Fixed const &rhs)

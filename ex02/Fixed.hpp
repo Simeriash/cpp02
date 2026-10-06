@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/06 10:23:32 by julauren          #+#    #+#             */
-/*   Updated: 2026/10/06 10:42:12 by julauren         ###   ########.fr       */
+/*   Updated: 2026/10/06 12:56:41 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ class Fixed
 		Fixed operator-(Fixed const &rhs) const;
 		Fixed operator*(Fixed const &rhs) const;
 		Fixed operator/(Fixed const &rhs) const;
+
+		Fixed &operator++();
+		Fixed &operator--();
+		Fixed operator++(int);
+		Fixed operator--(int);
 
 	private:
 		int _rawValue;
